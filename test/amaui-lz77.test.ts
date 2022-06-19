@@ -1,18 +1,11 @@
 /* tslint:disable: no-shadowed-variable */
 import { assert } from '@amaui/test';
 
-import { startBrowsers, IBrowsers, evaluate, closeBrowsers } from '../utils/js/test/utils';
+import { evaluate } from '../utils/js/test/utils';
 
 import AmauiLz77 from '../src';
 
 group('@amaui/lz77', () => {
-  let browsers: IBrowsers;
-
-  pre(async () => browsers = await startBrowsers());
-
-  post(async () => {
-    await closeBrowsers(browsers);
-  });
 
   to('AmauiLZ77Response', async () => {
     const value = new AmauiLz77.AmauiLZ77Response(
@@ -39,7 +32,7 @@ group('@amaui/lz77', () => {
       );
 
       return value;
-    }, { browsers });
+    });
     const valueNode = value;
     const values = [valueNode, ...valueBrowsers];
 
@@ -64,7 +57,7 @@ group('@amaui/lz77', () => {
           return [
             new window.AmauiLz77.AmauiLZ77Response() instanceof window.AmauiLz77.AmauiLZ77Response,
           ];
-        }, { browsers });
+        });
         const valueNode = [
           new AmauiLz77.AmauiLZ77Response() instanceof AmauiLz77.AmauiLZ77Response,
         ];
@@ -85,7 +78,7 @@ group('@amaui/lz77', () => {
             window.AmauiLz77.decode(' a').value,
             window.AmauiLz77.decode(' Lorem a ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
           ];
-        }, { browsers });
+        });
         const valueNode = [
           AmauiLz77.decode('').value,
           AmauiLz77.decode(' ').value,
@@ -119,7 +112,7 @@ group('@amaui/lz77', () => {
             window.AmauiLz77.prefix('a `1a,4` u uuvu'),
             window.AmauiLz77.prefix(special.reduce((result, item) => result += ` ${item}1a,4${item} `, '')),
           ];
-        }, { browsers });
+        });
         const valueNode = [
           AmauiLz77.prefix(''),
           AmauiLz77.prefix('a'),
@@ -157,7 +150,7 @@ group('@amaui/lz77', () => {
 
               return item;
             });
-        }, { browsers });
+        });
         const valueNode = [
           new AmauiLz77('').response,
           new AmauiLz77(4 as any).response,
@@ -306,7 +299,7 @@ group('@amaui/lz77', () => {
 
               return item;
             });
-        }, { browsers });
+        });
         const valueNode = amauiLz77
           .map(item => {
             delete item.encode_execution;
@@ -397,7 +390,7 @@ group('@amaui/lz77', () => {
           ]));
 
           return values_;
-        }, { browsers });
+        });
         const values_ = [
           new AmauiLz77().decode('').value,
           new AmauiLz77().decode(' ').value,
