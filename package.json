@@ -1,6 +1,6 @@
 {
   "name": "@amaui/lz77",
-  "version": "1.0.11114",
+  "version": "1.0.11117",
   "description": "LZ77",
   "repository": "https://github.com/amaui-org/amaui-lz77.git",
   "author": "Lazar <lazareric.com@gmail.com>",
@@ -44,8 +44,8 @@
     "test": "yarn lint && yarn type && yarn build && yarn test:pre && yarn cov && yarn test:post"
   },
   "dependencies": {
-    "@amaui/date": "^1.0.11114",
-    "@amaui/utils": "^1.0.11114",
+    "@amaui/date": "^1.0.11117",
+    "@amaui/utils": "^1.0.11117",
     "@babel/runtime": "^7.18.3"
   },
   "devDependencies": {
