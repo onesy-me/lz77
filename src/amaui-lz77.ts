@@ -1,5 +1,9 @@
-import { is, to, isEnvironment, castParam } from '@amaui/utils';
-import { AmauiDate, duration } from '@amaui/date';
+import is from '@amaui/utils/is';
+import isEnvironment from '@amaui/utils/isEnvironment';
+import to from '@amaui/utils/to';
+import castParam from '@amaui/utils/castParam';
+import AmauiDate from '@amaui/date/amaui-date';
+import duration from '@amaui/date/duration';
 
 export type TVariant = Buffer | Uint8Array | string;
 
