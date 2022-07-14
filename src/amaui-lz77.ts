@@ -1,5 +1,7 @@
 import is from '@amaui/utils/is';
-import isEnvironment from '@amaui/utils/isEnvironment';
+// Weird issue where in umd it makes a wrong method
+// if it's imported directly as a default import from @amaui/utils/isEnvironment
+import { isEnvironment } from '@amaui/utils';
 import to from '@amaui/utils/to';
 import castParam from '@amaui/utils/castParam';
 import AmauiDate from '@amaui/date/amaui-date';
