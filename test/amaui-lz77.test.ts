@@ -133,7 +133,7 @@ group('@amaui/lz77', () => {
 
     group('amauiLZ77Response', () => {
 
-      to('encode', async () => {
+      to('response', async () => {
         const valueBrowsers = await evaluate((window: any) => {
           return [
             new window.AmauiLz77('').response,
