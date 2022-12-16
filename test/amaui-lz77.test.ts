@@ -43,8 +43,8 @@ group('@amaui/lz77', () => {
       compression_ratio: 1.14,
       compression_percentage: 14.4,
       positive: true,
-      encode_execution_milliseconds: 1.04,
-      encode_execution: '1 milliseconds',
+      performance_milliseconds: 1.04,
+      performance: '1 milliseconds',
     }));
   });
 
@@ -145,8 +145,8 @@ group('@amaui/lz77', () => {
             new window.AmauiLz77(new Uint8Array([97, 97, 97])).response,
           ]
             .map(item => {
-              delete item.encode_execution;
-              delete item.encode_execution_milliseconds;
+              delete item.performance;
+              delete item.performance_milliseconds;
 
               return item;
             });
@@ -162,8 +162,8 @@ group('@amaui/lz77', () => {
           new AmauiLz77(Buffer.from([97, 97, 97])).response,
         ]
           .map(item => {
-            delete item.encode_execution;
-            delete item.encode_execution_milliseconds;
+            delete item.performance;
+            delete item.performance_milliseconds;
 
             return item;
           });
@@ -294,16 +294,16 @@ group('@amaui/lz77', () => {
 
           return amauiLz77
             .map(item => {
-              delete item.encode_execution;
-              delete item.encode_execution_milliseconds;
+              delete item.performance;
+              delete item.performance_milliseconds;
 
               return item;
             });
         });
         const valueNode = amauiLz77
           .map(item => {
-            delete item.encode_execution;
-            delete item.encode_execution_milliseconds;
+            delete item.performance;
+            delete item.performance_milliseconds;
 
             return item;
           });

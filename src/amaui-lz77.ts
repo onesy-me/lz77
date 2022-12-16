@@ -16,8 +16,8 @@ class AmauiLZ77Response {
     public compression_ratio?: number,
     public compression_percentage?: number,
     public positive?: boolean,
-    public encode_execution_milliseconds?: number,
-    public encode_execution?: string
+    public performance_milliseconds?: number,
+    public performance?: string
   ) { }
 
 }
@@ -179,8 +179,8 @@ class AmauiLZ77 {
 
     const response: AmauiLZ77Response = new AmauiLZ77Response(output);
 
-    response.encode_execution_milliseconds = AmauiDate.milliseconds - startTime;
-    response.encode_execution = duration(response.encode_execution_milliseconds) || '0 milliseconds';
+    response.performance_milliseconds = AmauiDate.milliseconds - startTime;
+    response.performance = duration(response.performance_milliseconds) || '0 milliseconds';
     response.original_byte_size = to(this.valueEncoded, 'byte-size') as number;
     response.value_byte_size = to(response.value, 'byte-size') as number;
     response.compression_ratio = Number((((response.value_byte_size + response.original_byte_size) / response.value_byte_size) - 1).toFixed(2));
@@ -257,10 +257,10 @@ class AmauiLZ77 {
       value = this.valueToVariant(value, variant);
 
       response.value = value;
-      response.encode_execution_milliseconds = AmauiDate.milliseconds - startTime;
-      response.encode_execution = duration(response.encode_execution_milliseconds) || '0 milliseconds';
-      response.original_byte_size = to(value_, 'byte-size') as number;
-      response.value_byte_size = to(value, 'byte-size') as number;
+      response.performance_milliseconds = AmauiDate.milliseconds - startTime;
+      response.performance = duration(response.performance_milliseconds) || '0 milliseconds';
+      response.original_byte_size = to(value, 'byte-size') as number;
+      response.value_byte_size = to(value_, 'byte-size') as number;
     }
 
     return response;
