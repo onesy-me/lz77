@@ -256,6 +256,16 @@ class AmauiLZ77 {
 
       value = this.valueToVariant(value, variant);
 
+      // Convert value back from UTF-16 -> Utf8Array -> Text decoded
+      // ie. back to Japanese characters
+      if (is('string', value)) {
+        const array = [];
+
+        value.split('').forEach(item => array.push(item.charCodeAt(0)));
+
+        value = new TextDecoder().decode(new Uint8Array(array));
+      }
+
       response.value = value;
       response.performance_milliseconds = AmauiDate.milliseconds - startTime;
       response.performance = duration(response.performance_milliseconds) || '0 milliseconds';

@@ -425,4 +425,28 @@ group('@amaui/lz77', () => {
 
   });
 
+  group('Use cases', () => {
+
+    to('Japanese characters, UTF-16', async () => {
+      const valueBrowsers = await evaluate((window: any) => {
+        const values_ = [
+          window.AmauiLz77.decode(new window.AmauiLz77('アマウイ大好き').response.value).value
+        ];
+
+        return values_;
+      });
+      const values_ = [
+        AmauiLz77.decode(new AmauiLz77('アマウイ大好き').response.value).value
+      ];
+
+      const valueNode = values_;
+      const values = [valueNode, ...valueBrowsers.map(item => item.slice(0, 6))];
+
+      values.forEach(value => assert(value).eql([
+        'アマウイ大好き'
+      ]));
+    });
+
+  });
+
 });
