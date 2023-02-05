@@ -217,12 +217,16 @@ class AmauiLZ77 {
 
       if (meta.length) prefix = meta;
 
-      const regexp = new RegExp(`\\${prefix}[^\\${prefix}]{1,4},[^\\${prefix}]{1,4}\\${prefix}`, 'g');
+      const regexp = new RegExp(`\\${prefix}[^\\${prefix}]{1,4}(,[^\\${prefix}]{1,4})?\\${prefix}`, 'g');
 
       const abbrs = value.match(regexp) || [];
 
       for (const abbr of abbrs) {
-        let [position, offset] = abbr.slice(1, -1).split(',') as any;
+        let valueAbbr = abbr;
+
+        if (!valueAbbr.includes(',')) valueAbbr = `${prefix}${valueAbbr.replace(new RegExp(`${prefix}`, 'g'), '')},${valueAbbr.replace(new RegExp(`${prefix}`, 'g'), '')}${prefix}`;
+
+        let [position, offset] = valueAbbr.slice(1, -1).split(',') as any;
 
         [position, offset] = [position, offset].map(item => this.valueDecode(item));
 
