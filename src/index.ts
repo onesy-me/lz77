@@ -1,1 +1,1 @@
-export { default } from './amaui-lz77';
+export { default } from './AmauiLZ77';

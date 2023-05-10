@@ -5,7 +5,7 @@ import { evaluate } from '../utils/js/test/utils';
 
 import AmauiLz77 from '../src';
 
-group('@amaui/lz77', () => {
+group('AmauiLZ77', () => {
 
   to('AmauiLZ77Response', async () => {
     const value = new AmauiLz77.AmauiLZ77Response(
