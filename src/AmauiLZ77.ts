@@ -70,10 +70,10 @@ class AmauiLZ77 {
   public constructor(
     public value?: TVariant
   ) {
-    if (this.value !== undefined) this.into();
+    if (this.value !== undefined) this.init();
   }
 
-  private into(): void {
+  private init(): void {
     if (['uint8array', 'buffer', 'string'].some(item => is(item, this.value))) {
       this.getVariant();
 
