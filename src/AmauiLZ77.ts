@@ -2,7 +2,7 @@ import is from '@amaui/utils/is';
 import isEnvironment from '@amaui/utils/isEnvironment';
 import to from '@amaui/utils/to';
 import castParam from '@amaui/utils/castParam';
-import AmauiDate from '@amaui/date/amaui-date';
+import AmauiDate from '@amaui/date/AmauiDate';
 import duration from '@amaui/date/duration';
 
 export type TVariant = Buffer | Uint8Array | string;
@@ -74,7 +74,7 @@ class AmauiLZ77 {
   }
 
   private init(): void {
-    if (['uint8array', 'buffer', 'string'].some(item => is(item, this.value))) {
+    if (['uint8array', 'buffer', 'string'].some((item: any) => is(item, this.value))) {
       this.getVariant();
 
       if (is('string', this.value)) {
