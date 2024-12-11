@@ -2,7 +2,7 @@
   "name": "@onesy/lz77",
   "version": "1.0.0",
   "description": "LZ77",
-  "repository": "https://github.com/onesy-org/onesy-lz77.git",
+  "repository": "https://github.com/onesy-me/lz77.git",
   "author": "Lazar <lazareric2@gmail.com>",
   "license": "MIT",
   "private": false,
