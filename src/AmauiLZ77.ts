@@ -1,13 +1,13 @@
-import is from '@amaui/utils/is';
-import isEnvironment from '@amaui/utils/isEnvironment';
-import to from '@amaui/utils/to';
-import castParam from '@amaui/utils/castParam';
-import AmauiDate from '@amaui/date/AmauiDate';
-import duration from '@amaui/date/duration';
+import is from '@onesy/utils/is';
+import isEnvironment from '@onesy/utils/isEnvironment';
+import to from '@onesy/utils/to';
+import castParam from '@onesy/utils/castParam';
+import OnesyDate from '@onesy/date/OnesyDate';
+import duration from '@onesy/date/duration';
 
 export type TVariant = Buffer | Uint8Array | string;
 
-class AmauiLZ77Response {
+class OnesyLZ77Response {
 
   public constructor(
     public value: any = '',
@@ -22,16 +22,16 @@ class AmauiLZ77Response {
 
 }
 
-class AmauiLZ77 {
+class OnesyLZ77 {
   public variant: TVariant;
-  public response: AmauiLZ77Response = new AmauiLZ77Response();
+  public response: OnesyLZ77Response = new OnesyLZ77Response();
   public valueString: string;
   public valueEncoded: Uint8Array | Buffer;
 
-  public static get AmauiLZ77Response() { return AmauiLZ77Response; }
+  public static get OnesyLZ77Response() { return OnesyLZ77Response; }
 
   public static decode(value: string) {
-    return new AmauiLZ77().decode(value);
+    return new OnesyLZ77().decode(value);
   }
 
   public static prefix(value: string): string {
@@ -63,7 +63,7 @@ class AmauiLZ77 {
     return prefix;
   }
 
-  public get encoded(): AmauiLZ77Response {
+  public get encoded(): OnesyLZ77Response {
     return this.response;
   }
 
@@ -92,10 +92,10 @@ class AmauiLZ77 {
     }
   }
 
-  public encode(): AmauiLZ77Response {
-    const startTime = AmauiDate.milliseconds;
+  public encode(): OnesyLZ77Response {
+    const startTime = OnesyDate.milliseconds;
 
-    const prefix = AmauiLZ77.prefix(this.valueString);
+    const prefix = OnesyLZ77.prefix(this.valueString);
 
     const windowLength = 32e4;
 
@@ -177,9 +177,9 @@ class AmauiLZ77 {
       if (variantCodeValue > 0) output = `${variantCodeValue}${output}`;
     }
 
-    const response: AmauiLZ77Response = new AmauiLZ77Response(output);
+    const response: OnesyLZ77Response = new OnesyLZ77Response(output);
 
-    response.performance_milliseconds = AmauiDate.milliseconds - startTime;
+    response.performance_milliseconds = OnesyDate.milliseconds - startTime;
     response.performance = duration(response.performance_milliseconds) || '0 milliseconds';
     response.original_byte_size = to(this.valueEncoded, 'byte-size') as number;
     response.value_byte_size = to(response.value, 'byte-size') as number;
@@ -192,10 +192,10 @@ class AmauiLZ77 {
     return response;
   }
 
-  public decode(value_: string): AmauiLZ77Response {
-    const response = new AmauiLZ77Response();
+  public decode(value_: string): OnesyLZ77Response {
+    const response = new OnesyLZ77Response();
 
-    const startTime = AmauiDate.milliseconds;
+    const startTime = OnesyDate.milliseconds;
 
     if (is('string', value_)) {
       let meta = '';
@@ -271,7 +271,7 @@ class AmauiLZ77 {
       }
 
       response.value = value;
-      response.performance_milliseconds = AmauiDate.milliseconds - startTime;
+      response.performance_milliseconds = OnesyDate.milliseconds - startTime;
       response.performance = duration(response.performance_milliseconds) || '0 milliseconds';
       response.original_byte_size = to(value, 'byte-size') as number;
       response.value_byte_size = to(value_, 'byte-size') as number;
@@ -318,4 +318,4 @@ class AmauiLZ77 {
   }
 }
 
-export default AmauiLZ77;
+export default OnesyLZ77;

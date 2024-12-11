@@ -1,14 +1,14 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
-import AmauiLz77 from '../src';
+import OnesyLz77 from '../src';
 
-group('AmauiLZ77', () => {
+group('OnesyLZ77', () => {
 
-  to('AmauiLZ77Response', async () => {
-    const value = new AmauiLz77.AmauiLZ77Response(
+  to('OnesyLZ77Response', async () => {
+    const value = new OnesyLz77.OnesyLZ77Response(
       'a',
       14,
       1,
@@ -20,7 +20,7 @@ group('AmauiLZ77', () => {
     );
 
     const valueBrowsers = await evaluate((window: any) => {
-      const value = new window.AmauiLz77.AmauiLZ77Response(
+      const value = new window.OnesyLz77.OnesyLZ77Response(
         'a',
         14,
         1,
@@ -48,18 +48,18 @@ group('AmauiLZ77', () => {
     }));
   });
 
-  group('AmauiLz77', () => {
+  group('OnesyLz77', () => {
 
-    group('AmauiLz77', () => {
+    group('OnesyLz77', () => {
 
-      to('AmauiLZ77Response', async () => {
+      to('OnesyLZ77Response', async () => {
         const valueBrowsers = await evaluate((window: any) => {
           return [
-            new window.AmauiLz77.AmauiLZ77Response() instanceof window.AmauiLz77.AmauiLZ77Response,
+            new window.OnesyLz77.OnesyLZ77Response() instanceof window.OnesyLz77.OnesyLZ77Response,
           ];
         });
         const valueNode = [
-          new AmauiLz77.AmauiLZ77Response() instanceof AmauiLz77.AmauiLZ77Response,
+          new OnesyLz77.OnesyLZ77Response() instanceof OnesyLz77.OnesyLZ77Response,
         ];
         const values = [valueNode, ...valueBrowsers];
 
@@ -71,21 +71,21 @@ group('AmauiLZ77', () => {
       to('decode', async () => {
         const valueBrowsers = await evaluate((window: any) => {
           return [
-            window.AmauiLz77.decode('').value,
-            window.AmauiLz77.decode(' ').value,
-            window.AmauiLz77.decode('  ').value,
-            window.AmauiLz77.decode('   ').value,
-            window.AmauiLz77.decode(' a').value,
-            window.AmauiLz77.decode(' Lorem a ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
+            window.OnesyLz77.decode('').value,
+            window.OnesyLz77.decode(' ').value,
+            window.OnesyLz77.decode('  ').value,
+            window.OnesyLz77.decode('   ').value,
+            window.OnesyLz77.decode(' a').value,
+            window.OnesyLz77.decode(' Lorem a ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
           ];
         });
         const valueNode = [
-          AmauiLz77.decode('').value,
-          AmauiLz77.decode(' ').value,
-          AmauiLz77.decode('  ').value,
-          AmauiLz77.decode('   ').value,
-          AmauiLz77.decode(' a').value,
-          AmauiLz77.decode(' Lorem a ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
+          OnesyLz77.decode('').value,
+          OnesyLz77.decode(' ').value,
+          OnesyLz77.decode('  ').value,
+          OnesyLz77.decode('   ').value,
+          OnesyLz77.decode(' a').value,
+          OnesyLz77.decode(' Lorem a ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
         ];
         const values = [valueNode, ...valueBrowsers];
 
@@ -107,17 +107,17 @@ group('AmauiLZ77', () => {
           const special = ['`', `'`, `"`, '(', ')', '|', ',', '+', '*', '-', '.', '^', ';', ':', '=', '?', '[', ']', '_'];
 
           return [
-            window.AmauiLz77.prefix(''),
-            window.AmauiLz77.prefix('a'),
-            window.AmauiLz77.prefix('a `1a,4` u uuvu'),
-            window.AmauiLz77.prefix(special.reduce((result, item) => result += ` ${item}1a,4${item} `, '')),
+            window.OnesyLz77.prefix(''),
+            window.OnesyLz77.prefix('a'),
+            window.OnesyLz77.prefix('a `1a,4` u uuvu'),
+            window.OnesyLz77.prefix(special.reduce((result, item) => result += ` ${item}1a,4${item} `, '')),
           ];
         });
         const valueNode = [
-          AmauiLz77.prefix(''),
-          AmauiLz77.prefix('a'),
-          AmauiLz77.prefix('a `1a,4` u uuvu'),
-          AmauiLz77.prefix(special.reduce((result, item) => result += ` ${item}1a,4${item} `, '')),
+          OnesyLz77.prefix(''),
+          OnesyLz77.prefix('a'),
+          OnesyLz77.prefix('a `1a,4` u uuvu'),
+          OnesyLz77.prefix(special.reduce((result, item) => result += ` ${item}1a,4${item} `, '')),
         ];
         const values = [valueNode, ...valueBrowsers];
 
@@ -131,18 +131,18 @@ group('AmauiLZ77', () => {
 
     });
 
-    group('amauiLZ77Response', () => {
+    group('onesyLZ77Response', () => {
 
       to('response', async () => {
         const valueBrowsers = await evaluate((window: any) => {
           return [
-            new window.AmauiLz77('').response,
-            new window.AmauiLz77(4 as any).response,
-            new window.AmauiLz77(' ').response,
-            new window.AmauiLz77('  ').response,
-            new window.AmauiLz77('a').response,
-            new window.AmauiLz77('Lorem u ipsum dolor sit amet, consectetur adipiscing elit.Fuscem dolor em, facilisis sed eratr sit amet,pharetra blandit augue.Sed id placerat felis, malesuada rutrum nisl.In ultrices sed mauris finibus mmalesuad.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat.Proin egestassed maurelit, eratr sit molestie nisi semper at.Cras interdum massa nec mmolestierutrum.Duis commodo venenatis justo, ac porta tellus pellentesque sed.Donec et nisi aumus.').response,
-            new window.AmauiLz77(new Uint8Array([97, 97, 97])).response,
+            new window.OnesyLz77('').response,
+            new window.OnesyLz77(4 as any).response,
+            new window.OnesyLz77(' ').response,
+            new window.OnesyLz77('  ').response,
+            new window.OnesyLz77('a').response,
+            new window.OnesyLz77('Lorem u ipsum dolor sit amet, consectetur adipiscing elit.Fuscem dolor em, facilisis sed eratr sit amet,pharetra blandit augue.Sed id placerat felis, malesuada rutrum nisl.In ultrices sed mauris finibus mmalesuad.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat.Proin egestassed maurelit, eratr sit molestie nisi semper at.Cras interdum massa nec mmolestierutrum.Duis commodo venenatis justo, ac porta tellus pellentesque sed.Donec et nisi aumus.').response,
+            new window.OnesyLz77(new Uint8Array([97, 97, 97])).response,
           ]
             .map(item => {
               delete item.performance;
@@ -152,14 +152,14 @@ group('AmauiLZ77', () => {
             });
         });
         const valueNode = [
-          new AmauiLz77('').response,
-          new AmauiLz77(4 as any).response,
-          new AmauiLz77(' ').response,
-          new AmauiLz77('  ').response,
-          new AmauiLz77('a').response,
-          new AmauiLz77('Lorem u ipsum dolor sit amet, consectetur adipiscing elit.Fuscem dolor em, facilisis sed eratr sit amet,pharetra blandit augue.Sed id placerat felis, malesuada rutrum nisl.In ultrices sed mauris finibus mmalesuad.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat.Proin egestassed maurelit, eratr sit molestie nisi semper at.Cras interdum massa nec mmolestierutrum.Duis commodo venenatis justo, ac porta tellus pellentesque sed.Donec et nisi aumus.').response,
-          new AmauiLz77(new Uint8Array([97, 97, 97])).response,
-          new AmauiLz77(Buffer.from([97, 97, 97])).response,
+          new OnesyLz77('').response,
+          new OnesyLz77(4 as any).response,
+          new OnesyLz77(' ').response,
+          new OnesyLz77('  ').response,
+          new OnesyLz77('a').response,
+          new OnesyLz77('Lorem u ipsum dolor sit amet, consectetur adipiscing elit.Fuscem dolor em, facilisis sed eratr sit amet,pharetra blandit augue.Sed id placerat felis, malesuada rutrum nisl.In ultrices sed mauris finibus mmalesuad.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat.Proin egestassed maurelit, eratr sit molestie nisi semper at.Cras interdum massa nec mmolestierutrum.Duis commodo venenatis justo, ac porta tellus pellentesque sed.Donec et nisi aumus.').response,
+          new OnesyLz77(new Uint8Array([97, 97, 97])).response,
+          new OnesyLz77(Buffer.from([97, 97, 97])).response,
         ]
           .map(item => {
             delete item.performance;
@@ -239,17 +239,17 @@ group('AmauiLZ77', () => {
       });
 
       to('encode', async () => {
-        let amauiLz77: any = [
-          new AmauiLz77(''),
-          new AmauiLz77(' '),
-          new AmauiLz77('  '),
-          new AmauiLz77('a'),
-          new AmauiLz77('Lorem u ipsum dolor sit amet, consectetur adipiscing elit.Fuscem dolor em, facilisis sed eratr sit amet,pharetra blandit augue.Sed id placerat felis, malesuada rutrum nisl.In ultrices sed mauris finibus mmalesuad.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat.Proin egestassed maurelit, eratr sit molestie nisi semper at.Cras interdum massa nec mmolestierutrum.Duis commodo venenatis justo, ac porta tellus pellentesque sed.Donec et nisi aumus.'),
-          new AmauiLz77(new Uint8Array([97, 97, 97])),
-          new AmauiLz77(Buffer.from([97, 97, 97])),
+        let onesyLz77: any = [
+          new OnesyLz77(''),
+          new OnesyLz77(' '),
+          new OnesyLz77('  '),
+          new OnesyLz77('a'),
+          new OnesyLz77('Lorem u ipsum dolor sit amet, consectetur adipiscing elit.Fuscem dolor em, facilisis sed eratr sit amet,pharetra blandit augue.Sed id placerat felis, malesuada rutrum nisl.In ultrices sed mauris finibus mmalesuad.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat.Proin egestassed maurelit, eratr sit molestie nisi semper at.Cras interdum massa nec mmolestierutrum.Duis commodo venenatis justo, ac porta tellus pellentesque sed.Donec et nisi aumus.'),
+          new OnesyLz77(new Uint8Array([97, 97, 97])),
+          new OnesyLz77(Buffer.from([97, 97, 97])),
         ];
 
-        amauiLz77 = amauiLz77.map(item => {
+        onesyLz77 = onesyLz77.map(item => {
           item.getVariant();
 
           if (typeof item.value === 'string') {
@@ -267,16 +267,16 @@ group('AmauiLZ77', () => {
         });
 
         const valueBrowsers = await evaluate((window: any) => {
-          let amauiLz77 = [
-            new window.AmauiLz77(''),
-            new window.AmauiLz77(' '),
-            new window.AmauiLz77('  '),
-            new window.AmauiLz77('a'),
-            new window.AmauiLz77('Lorem u ipsum dolor sit amet, consectetur adipiscing elit.Fuscem dolor em, facilisis sed eratr sit amet,pharetra blandit augue.Sed id placerat felis, malesuada rutrum nisl.In ultrices sed mauris finibus mmalesuad.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat.Proin egestassed maurelit, eratr sit molestie nisi semper at.Cras interdum massa nec mmolestierutrum.Duis commodo venenatis justo, ac porta tellus pellentesque sed.Donec et nisi aumus.'),
-            new window.AmauiLz77(new Uint8Array([97, 97, 97])),
+          let onesyLz77 = [
+            new window.OnesyLz77(''),
+            new window.OnesyLz77(' '),
+            new window.OnesyLz77('  '),
+            new window.OnesyLz77('a'),
+            new window.OnesyLz77('Lorem u ipsum dolor sit amet, consectetur adipiscing elit.Fuscem dolor em, facilisis sed eratr sit amet,pharetra blandit augue.Sed id placerat felis, malesuada rutrum nisl.In ultrices sed mauris finibus mmalesuad.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat.Proin egestassed maurelit, eratr sit molestie nisi semper at.Cras interdum massa nec mmolestierutrum.Duis commodo venenatis justo, ac porta tellus pellentesque sed.Donec et nisi aumus.'),
+            new window.OnesyLz77(new Uint8Array([97, 97, 97])),
           ];
 
-          amauiLz77 = amauiLz77.map(item => {
+          onesyLz77 = onesyLz77.map(item => {
             item.getVariant();
 
             if (typeof item.value === 'string') {
@@ -292,7 +292,7 @@ group('AmauiLZ77', () => {
             return item.response;
           });
 
-          return amauiLz77
+          return onesyLz77
             .map(item => {
               delete item.performance;
               delete item.performance_milliseconds;
@@ -300,7 +300,7 @@ group('AmauiLZ77', () => {
               return item;
             });
         });
-        const valueNode = amauiLz77
+        const valueNode = onesyLz77
           .map(item => {
             delete item.performance;
             delete item.performance_milliseconds;
@@ -373,16 +373,16 @@ group('AmauiLZ77', () => {
       to('decode', async () => {
         const valueBrowsers = await evaluate((window: any) => {
           const values_ = [
-            new window.AmauiLz77().decode('').value,
-            new window.AmauiLz77().decode(' ').value,
-            new window.AmauiLz77().decode('  ').value,
-            new window.AmauiLz77().decode('   ').value,
-            new window.AmauiLz77().decode(' a').value,
-            new window.AmauiLz77().decode(' Lorem u ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
+            new window.OnesyLz77().decode('').value,
+            new window.OnesyLz77().decode(' ').value,
+            new window.OnesyLz77().decode('  ').value,
+            new window.OnesyLz77().decode('   ').value,
+            new window.OnesyLz77().decode(' a').value,
+            new window.OnesyLz77().decode(' Lorem u ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
           ];
 
-          const uint8Array = new window.AmauiLz77().decode('1 aaa').value;
-          const uint8Array1 = new window.AmauiLz77().decode('2 aaa').value;
+          const uint8Array = new window.OnesyLz77().decode('1 aaa').value;
+          const uint8Array1 = new window.OnesyLz77().decode('2 aaa').value;
 
           [uint8Array, uint8Array1].forEach(item => values_.push([
             item instanceof Uint8Array,
@@ -392,16 +392,16 @@ group('AmauiLZ77', () => {
           return values_;
         });
         const values_ = [
-          new AmauiLz77().decode('').value,
-          new AmauiLz77().decode(' ').value,
-          new AmauiLz77().decode('  ').value,
-          new AmauiLz77().decode('   ').value,
-          new AmauiLz77().decode(' a').value,
-          new AmauiLz77().decode(' Lorem u ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
+          new OnesyLz77().decode('').value,
+          new OnesyLz77().decode(' ').value,
+          new OnesyLz77().decode('  ').value,
+          new OnesyLz77().decode('   ').value,
+          new OnesyLz77().decode(' a').value,
+          new OnesyLz77().decode(' Lorem u ipsum dolor sit amet, consectetur adipiscing elit. Fusce`1f,8`em, facilisis sed erat`23,b`pharetra blandit augue. Sed id placerat felis, malesuada rutrum nisl. In ultrices sed mauris finibus m`1i,8`. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus, odio id rutrum blandit, neque velit aliquam odio, at rhoncus elit est nec erat. Proin egestas`6c,8`elit,`9d,9` molestie nisi semper at. Cras interdum massa nec m`1d,8`rutrum. Duis commodo venenatis justo, ac porta tellus pellentesque sed. Donec et nisi aumus.').value,
         ];
 
-        const buffer = new AmauiLz77().decode('1 aaa').value;
-        const uint8Array = new AmauiLz77().decode('2 aaa').value;
+        const buffer = new OnesyLz77().decode('1 aaa').value;
+        const uint8Array = new OnesyLz77().decode('2 aaa').value;
 
         const valueNode = values_;
         const values = [valueNode, ...valueBrowsers.map(item => item.slice(0, 6))];
@@ -430,13 +430,13 @@ group('AmauiLZ77', () => {
     to('Japanese characters, UTF-16', async () => {
       const valueBrowsers = await evaluate((window: any) => {
         const values_ = [
-          window.AmauiLz77.decode(new window.AmauiLz77('アマウイ大好き').response.value).value
+          window.OnesyLz77.decode(new window.OnesyLz77('アマウイ大好き').response.value).value
         ];
 
         return values_;
       });
       const values_ = [
-        AmauiLz77.decode(new AmauiLz77('アマウイ大好き').response.value).value
+        OnesyLz77.decode(new OnesyLz77('アマウイ大好き').response.value).value
       ];
 
       const valueNode = values_;
