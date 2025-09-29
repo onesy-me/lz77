@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "LZ77",
   "repository": "https://github.com/onesy-me/lz77.git",
-  "author": "Lazar <lazareric2@gmail.com>",
+  "author": "Lazar Erić <lazareric1@proton.me>",
   "license": "MIT",
   "private": false,
   "main": "./src/index.ts",
